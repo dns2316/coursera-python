@@ -1,2 +1,4 @@
 # coursera-python
-answers for ozzyst (Stas)
+answers of tasks for @ozzyst (Stas)
+
+www.coursera.org/learn/python-osnovy-programmirovaniya/
