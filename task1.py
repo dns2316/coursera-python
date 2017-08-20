@@ -70,9 +70,6 @@ def init_task():
         else:
             passing_score = answer_out[budget_places_count - 1]['eval_sum']
 
-
-
-
         # send answer to console
         print(passing_score)
 
@@ -100,7 +97,7 @@ def init_task():
 # read from file
 def data_read_from_txt(file):
     try:
-        with open(file, 'r') as f:
+        with open(file, 'r', encoding='utf-8') as f:
             return f.read()
 
     except IOError:
