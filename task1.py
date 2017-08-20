@@ -94,6 +94,9 @@ def init_task():
         cur_date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         data_write_to_txt('data{}.txt'.format(cur_date), string_data)
 
+        # write output.txt
+        data_write_to_txt('output.txt', str(passing_score))
+
 # read from file
 def data_read_from_txt(file):
     try:
@@ -107,7 +110,7 @@ def data_read_from_txt(file):
 # write to file
 def data_write_to_txt(file, data):
     try:
-        with open(file, 'w+') as f:
+        with open(file, 'w+', encoding='utf-8') as f:
             f.write(data)
         return True
 
