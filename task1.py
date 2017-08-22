@@ -15,7 +15,8 @@ def init_task():
     read_file = data_read_from_txt(input_file)
 
     if read_file != False:
-        num_lines = len(open(input_file).readlines(  ))
+        # read count lines in file
+        num_lines = len(read_file.readlines(  ))
 
         budget_places_count = int(read_file[0])
         participants_count = num_lines - 1
@@ -24,19 +25,20 @@ def init_task():
             name = []
             evaluation = []
             evaluation_sum = 0
-            if len(e.split(' ')) == 6:
-                name.append(e.split(' ')[0])
-                name.append(e.split(' ')[1])
-                name.append(e.split(' ')[2])
-                evaluation.append(e.split(' ')[3])
-                evaluation.append(e.split(' ')[4])
-                evaluation.append(e.split(' ')[5])
-            if len(e.split(' ')) == 5:
-                name.append(e.split(' ')[0])
-                name.append(e.split(' ')[1])
-                evaluation.append(e.split(' ')[2])
-                evaluation.append(e.split(' ')[3])
-                evaluation.append(e.split(' ')[4])
+            line_input = e.split(' ')
+            if len(line_input) == 6:
+                name.append(line_input[0])
+                name.append(line_input[1])
+                name.append(line_input[2])
+                evaluation.append(line_input[3])
+                evaluation.append(line_input[4])
+                evaluation.append(line_input[5])
+            if len(line_input) == 5:
+                name.append(line_input[0])
+                name.append(line_input[1])
+                evaluation.append(line_input[2])
+                evaluation.append(line_input[3])
+                evaluation.append(line_input[4])
 
             if int(evaluation[0]) >= 40 and int(evaluation[1]) >= 40 and int(evaluation[2]) >= 40:
                 evaluation_sum = int(evaluation[0]) + int(evaluation[1]) + int(evaluation[2])
